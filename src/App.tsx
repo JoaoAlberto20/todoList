@@ -1,7 +1,9 @@
+import './Global.css';
+
 function App() {
   return (
 
-    <div><h1>Meu primeiro app</h1></div>
+    <div><p>Meu primeiro app</p></div>
   );
 }
 
