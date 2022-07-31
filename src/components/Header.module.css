@@ -1,3 +1,75 @@
 .header {
-    
+
+  background: var(--gray-700);
 }
+
+.header > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 12.5rem;
+  position: relative;
+}
+
+.logo {
+  object-fit: fill;
+  height: 3rem;
+}
+
+.contentForm {
+  display: grid;
+  grid-template-columns: 1fr 5.625rem;
+  gap: 0.5rem;
+  position: absolute;
+  width: 100%;
+  top: 10.8125rem;
+}
+
+.contentForm input, button {
+  height: 3.375rem;
+}
+
+.contentForm input {
+  padding: 1rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+}
+
+.contentForm input:not(:placeholder-shown), 
+.contentForm input:focus {
+  color: var(--gray-100);
+  border: 1px solid var(--purple-dark);
+  outline: none;
+}
+
+.contentForm button {
+  background: var(--blue-dark);
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  color: var(--gray-100);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.contentForm button:hover {
+  background: var(--blue);
+}
+
+.contentForm button > svg {
+  width: 16px;
+  height: 16px;
+  font-weight: 700;
+}
+
+
+
+
+
+

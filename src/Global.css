@@ -18,7 +18,7 @@
   --purple-dark: #5E60CE;
 
   --blue: #4EA8DE;
-  --blue-dark: ##1E6F9F;
+  --blue-dark: #1E6F9F;
   
   --danger:   #E25858;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 body, input {
-  line-height: 140%;
   font-size: 1rem;
+  line-height: 1.375rem;
   color: var(--gray-300);
 }
