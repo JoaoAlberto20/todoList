@@ -1,5 +1,4 @@
 .header {
-
   background: var(--gray-700);
 }
 
@@ -25,15 +24,12 @@
   top: 10.8125rem;
 }
 
-.contentForm input, button {
-  height: 3.375rem;
-}
-
 .contentForm input {
   padding: 1rem;
   background: var(--gray-500);
   border: 1px solid var(--gray-700);
   border-radius: 8px;
+  height: 3.25rem;
 }
 
 .contentForm input:not(:placeholder-shown), 
@@ -43,9 +39,15 @@
   outline: none;
 }
 
+.contentForm button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .contentForm button {
   background: var(--blue-dark);
   border-radius: 8px;
+  height: 3.25rem;
   border: 0;
   outline: none;
   font-size: 0.875rem;
@@ -58,7 +60,7 @@
   cursor: pointer;
 }
 
-.contentForm button:hover {
+.contentForm button:not(:disabled):hover {
   background: var(--blue);
 }
 

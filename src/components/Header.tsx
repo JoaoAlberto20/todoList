@@ -1,5 +1,7 @@
 import { PlusCircle } from 'phosphor-react';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import {
+  ChangeEvent, FormEvent, InvalidEvent, useState,
+} from 'react';
 import styles from './Header.module.css';
 import Layout from './Layout';
 
@@ -22,6 +24,12 @@ export function Header({ handleTasks }: Props) {
     setNewTasks('');
   };
 
+  const handleNewTasksInvalid = (event: InvalidEvent<HTMLInputElement>) => {
+    event.target.setCustomValidity('Esse campo é obrigatório!');
+  };
+
+  const isNewTasksEmpty = newTasks.length === 0;
+
   return (
     <header className={styles.header}>
       <Layout>
@@ -30,11 +38,13 @@ export function Header({ handleTasks }: Props) {
         <form className={styles.contentForm} onSubmit={handleSubmitNewTasks}>
           <input
             type="text"
-            placeholder="Adicione uma nova tarefa"
             value={newTasks}
+            required
             onChange={handleNewTasks}
+            placeholder="Adicione uma nova tarefa"
+            onInvalid={handleNewTasksInvalid}
           />
-          <button type="submit">
+          <button type="submit" disabled={isNewTasksEmpty}>
             Criar
             <PlusCircle />
           </button>

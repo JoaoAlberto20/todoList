@@ -11,33 +11,77 @@
   box-shadow: 0px 2px 8px 0px #0000000F;
 }
 
-.tasks label {
+.tasks > div {
   display: flex;
   gap: 12px;
+  position: relative;
 }
 
-.tasks label span {
+.tasks label {
   color: var(--gray-100);
   font-weight: 400;
   font-size: 1.1rem;
+  cursor: pointer;
 } 
 
+.tasks  input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
 .tasks input[type="checkbox"] {
-  display: block;
-  width: 1.1rem;
-  height: 1.1rem;
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  
   border: 1px solid var(--blue);
   border-radius: 50%;
   align-self: flex-start;
-  margin-top: 5px;
+  margin-top: 4px; 
 }
 
-.tasks svg {
+.tasks  input[type="checkbox"]:not(:checked):hover{
+  cursor: pointer;
+  background: var(--blue-dark);
+  opacity: 0.2;
+}
+
+.tasks  input[type="checkbox"]:checked {
+  background: var(--blue-dark);
+}
+
+.tasks  input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  background-image: url('../assets/Checked.png');
+  background-repeat: no-repeat;
+  color: white;
+  width: 1.1rem;
+  height: 1.1rem;
+  top: 10px;
+  left: 5px;
+}
+
+.tasks  input[type="checkbox"]:checked:hover {
+  background: var(--purple);
+}
+
+.tasks button {
+  border: 0;
+  background: transparent;
+}
+
+
+.tasks button svg {
   width: 1.5rem;
   height: 1.5rem;
+  color: var(--gray-300);
+  cursor: pointer;
 }
 
-.tasks svg:hover {
+.tasks button svg:hover {
   background: var(--gray-400);
   color: var(--danger);
   border-radius: 4px;
